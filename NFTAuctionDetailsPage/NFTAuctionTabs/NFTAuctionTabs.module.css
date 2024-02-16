@@ -1,0 +1,29 @@
+
+
+.NFTAuctionTabs_box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--shadow-dark-color);
+}
+
+.NFTAuctionTabs_box_img{
+    border-radius: 50%;
+}
+
+.NFTAuctionTabs_box_info{
+    display: grid;
+    align-self: flex-start;
+    line-height: 1;
+    margin-top: 6px;
+}
+
+.NFTAuctionTabs_box_info span{
+    font-weight: 700;
+}
+
+.NFTAuctionTabs_box_info small{
+    margin-top: .2rem;
+}

@@ -1,0 +1,51 @@
+import React, {useEffect, useState, useContext} from "react";
+import { useRouter } from "next/router";
+
+//INTERNAL IMPORT
+import { Button, Category, Brand } from "../components/componentsindex";
+import NFTSaleDetailsPage from "../NFTSaleDetailsPage/NFTSaleDetailsPage";
+
+//IMPORT SMART CONTRACT DATA
+import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+
+const NFTSaleDetails = () => {
+  const {currentAccount} = useContext(NFTMarketplaceContext);
+
+  const [nft, setNft] = useState([]
+  //   {
+  //   price: "",
+  //   tokenId: 0,
+  //   seller: "",
+  //   buyer: "",
+  //   owner: "",
+  //   sold: false,
+  //   timestamp: 0,
+  //   marketId: ""
+  // }
+  );
+
+  // price,
+                // tokenId: tokenId.toNumber(),
+                // seller,
+                // buyer,
+                // owner,
+                // sold,
+                // timestamp, 
+                // marketId,  
+
+  const router = useRouter();
+  useEffect(()=> {
+        if (!router.isReady) return;
+        setNft(router.query)
+  },[router.isReady]);
+
+  return (
+    <div>
+      <NFTSaleDetailsPage nft={nft}/>
+      <Category />
+      {/* <Brand /> */}
+    </div>
+  );
+};
+
+export default NFTSaleDetails;
