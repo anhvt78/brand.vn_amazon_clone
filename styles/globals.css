@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer components {
-    .hearderHover{
+    .headerHover{
         /* @apply px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 */
         @apply px-2 border border-transparent hover:border-white cursor-pointer duration-300 items-center justify-center h-[70%] hidden xl:inline-flex gap-1
     }

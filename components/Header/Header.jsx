@@ -9,7 +9,7 @@ import Link from "next/link";
 // import { StateProps, StoreProduct } from "../../../type";
 // import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { ArrowDropDownOutlined } from "@mui/icons-material";
+import { ArrowDropDownOutlined, ShoppingCart } from "@mui/icons-material";
 // import { addUser } from "@/store/nextSlice";
 // import SearchProducts from "../SearchProducts";
 const Header = () => {
@@ -56,12 +56,12 @@ const Header = () => {
         {/* logo */}
         <Link
           href={"/"}
-          className="hearderHover"
+          className="headerHover"
         >
           <Image className="w-28 object-cover mt-1" src={logo} alt="logoImg" />
         </Link>
         {/* delivery */}
-        <div className="hearderHover">
+        <div className="headerHover">
           <SlLocationPin />
           <div className="text-xs">
             <p>Deliver to</p>
@@ -76,7 +76,7 @@ const Header = () => {
           <input
             // onChange={handleSearch}
             // value={searchQuery}
-            className="w-full h-full rounded-md px-2 placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazon_yellow"
+            className="w-full h-full rounded-md px-2 pl-16 placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazon_yellow"
             type="text"
             placeholder="Search products"
           />
@@ -125,6 +125,14 @@ const Header = () => {
           )}
           {/* ========== Searchfield ========== */}
         </div>
+        <div className="flex flex-col items-start justify-center headerHover">
+          <p className="text-xs text-lightText font-light">Hello, sign in</p>
+          <p className="text-sm font-semibold -mt-1 text-whiteText">Accounts & Lists{" "} 
+          <span>
+            <ArrowDropDownOutlined/>
+          </span>
+          </p>
+        </div>
         {/* signin */}
         {/* {userInfo ? (
           <div className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] gap-1">
@@ -154,11 +162,11 @@ const Header = () => {
         )} */}
         {/* fovorite */}
         <Link
-          href={"/favorite"}
-          className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
+          href={"/orders"}
+          className="text-xs text-gray-100 flex flex-col justify-center headerHover"
         >
-          <p>Marked</p>
-          <p className="text-white font-bold">& Favorite</p>
+          <p className="text-xs text-lightText font-light">Returns</p>
+          <p className="text-sm font-semibold -mt-1 text-whiteText">& Orders</p>
           {/* {favoriteData.length > 0 && (
             <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
               {favoriteData.length}
@@ -168,17 +176,17 @@ const Header = () => {
         {/* cart */}
         <Link
           href={"/cart"}
-          className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
-        >
+          className="flex items-start justify-center headerHover relative">
           <Image
-            className="w-auto object-cover h-8"
+            className="w-auto object-cover h-8 mt-3"
             src={cartIcon}
             alt="cartImg"
           />
-          <p className="text-xs text-white font-bold mt-3">Cart</p>
-          <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
-            {/* {productData ? productData.length : 0} */}
+          {/* <ShoppingCart/> */}
+          <p className="text-xs text-whiteText font-semibold mt-4">Cart <span className="absolute bg-amazon_yellow text-amazon_blue rounded-full text-xs top-2 left-7 font-semibold p-1 h-4 flex justify-center items-center">
+            {/* {productData ? productData.length : 0} */}0
           </span>
+          </p>
         </Link>
       </div>
     </div>
