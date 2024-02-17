@@ -72,7 +72,16 @@ const Header = () => {
         {/* <div className="flex-1 h-10 hidden md:inline-flex items-center justify-between relative"> */}
         <div className="h-10 rounded-md flex flex-grow relative">
           <span onClick={() => setShowAll(!showAll)} className="w-14 h-full bg-gray-200 hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center absolute left-0 rounded-tl-md rounded-bl-md">
-            All <span></span><ArrowDropDownOutlined/></span>
+            All <span></span>
+            <ArrowDropDownOutlined/>
+            </span>
+            {showAll && (
+              <div>
+                <ul>
+                  
+                </ul>
+              </div>
+            )}
           <input
             // onChange={handleSearch}
             // value={searchQuery}

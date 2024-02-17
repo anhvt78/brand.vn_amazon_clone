@@ -23,7 +23,7 @@ import Loader from "./Loader/Loader";
 import Error from "./Error/Error";
 import Waitter from "./Waitter/Waitter";
 import Header from "./Header/Header";
-import BottomHeader from "./Header/BottomHeader";
+import HeaderBottom from "./Header/HeaderBottom";
 
 export {
   Button,
@@ -51,5 +51,5 @@ export {
   Error,
   Waitter,
   Header,
-  BottomHeader
+  HeaderBottom
 };

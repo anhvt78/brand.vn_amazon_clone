@@ -1,14 +1,14 @@
 import "../styles/globals.css";
 
 //INTRNAL IMPORT
-import { Header, BottomHeader, Footer } from "../components/componentsindex";
+import { Header, HeaderBottom, Footer } from "../components/componentsindex";
 import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
 
 const MyApp = ({ Component, pageProps }) => (
   <div className="font-bodyFont">
     <NFTMarketplaceProvider>
       <Header />
-      <BottomHeader />
+      <HeaderBottom />
       <Component {...pageProps} />
       <Footer />
     </NFTMarketplaceProvider>
