@@ -12,10 +12,11 @@ import { useEffect, useState } from "react";
 import { ArrowDropDownOutlined, ShoppingCart } from "@mui/icons-material";
 // import { addUser } from "@/store/nextSlice";
 // import SearchProducts from "../SearchProducts";
+import { allItems } from "@/constants";
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
   // const { data: session } = useSession();
-  const [allData, setAllData] = useState([]);
+
 //   const { productData, favoriteData, userInfo, allProducts } = useSelector(
 //     (state: StateProps) => state.next
 //   );
@@ -77,8 +78,17 @@ const Header = () => {
             </span>
             {showAll && (
               <div>
-                <ul>
-                  
+                <ul className="absolute w-56 h-80 top-10 left-0 overflow-y-scroll
+                overflow-x-hidden bg-white border-[1px] border-x-amazon_blue text-black p-2
+                flex-col gap-1 z-50">
+                  {
+                    allItems.map((item) => (
+                      <li key={item._id} className="text-sm tracking-wide font-titleFont border-b-[1px]
+                        border-b-transparent hover:border-b-amazon_blue cursor-pointer duration-200">
+                        {item.title}
+                      </li>
+                    ))
+                  }
                 </ul>
               </div>
             )}
