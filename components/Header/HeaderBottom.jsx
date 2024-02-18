@@ -1,7 +1,7 @@
-import { Menu } from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
 import { AccountCircle } from "@mui/icons-material";
 import { useState } from "react";
-import { LuMenu } from "react-icons/lu";
+import SideNavContent from "./SideNavContent";
 // import { StateProps } from "../../../type";
 // import { signOut } from "next-auth/react";
 // import { useSelector, useDispatch } from "react-redux";
@@ -33,7 +33,33 @@ const [sidebar, setSidebar] = useState(false);
                 <AccountCircle/>
                 <h3 className="font-titleFont font-bold text-lg tracking-wide">Hello, Sign In</h3>
               </div>
+              <SideNavContent 
+                  title="Didital Content & Devices"
+                  one="Amazon Music"
+                  two="Kindle E-readers & Books"
+                  three="Amazon Appstore"
+              />
+              <SideNavContent
+                title="Shop By Department"
+                one="Electronics"
+                two="Computers"
+                three="Smart Home"
+              />
+              <SideNavContent
+                title="Programs & Features"
+                one="Gift Cards"
+                two="Amazon Live"
+                three="International Shopping"
+              />
+              <SideNavContent
+                title="Help & Settings"
+                one="Your Account"
+                two="Customer Service"
+                three="Contact us"
+              />
             </div>
+            <span onClick={() => setSidebar(false)} className="cursor-pointer absolute top-0 left-[360px] w-10 h-10 text-black 
+            flex items-center justify-center border bg-gray-200 hover:bg-red-500 hover:text-white duration-300"><Close/></span>
           </div>
         </div>
       )}

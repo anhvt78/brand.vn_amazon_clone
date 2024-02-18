@@ -51,8 +51,8 @@ const Header = () => {
 //   }, [searchQuery]);
 
   return (
-    <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
-      <div className="h-full w-full mx-auto inline-flex items-center justify-between gap-1 mdl:gap-3 px-4">
+    <div className="w-full ">
+      <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center gap-4">
         {/* logo */}
         <Link
           href={"/"}
