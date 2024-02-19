@@ -13,6 +13,7 @@ import { ArrowDropDownOutlined, ShoppingCart } from "@mui/icons-material";
 // import { addUser } from "@/store/nextSlice";
 // import SearchProducts from "../SearchProducts";
 import { allItems } from "@/constants";
+import { HeaderBottom } from "../componentsindex";
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
   // const { data: session } = useSession();
@@ -208,6 +209,7 @@ const Header = () => {
           </p>
         </Link>
       </div>
+      <HeaderBottom/>
     </div>
   );
 };

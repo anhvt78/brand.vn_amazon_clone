@@ -1,14 +1,16 @@
 import "../styles/globals.css";
+import "slick-carousel/slick/slick.css";
 
 //INTRNAL IMPORT
-import { Header, HeaderBottom, Footer } from "../components/componentsindex";
+import { Header, Footer, Banner } from "../components/componentsindex";
 import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
+
 
 const MyApp = ({ Component, pageProps }) => (
   <div className="font-bodyFont">
     <NFTMarketplaceProvider>
       <Header />
-      <HeaderBottom />
+      <Banner />
       <Component {...pageProps} />
       <Footer />
     </NFTMarketplaceProvider>

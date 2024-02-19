@@ -24,6 +24,7 @@ import Error from "./Error/Error";
 import Waitter from "./Waitter/Waitter";
 import Header from "./Header/Header";
 import HeaderBottom from "./Header/HeaderBottom";
+import Banner from "./home/Banner";
 
 export {
   Button,
@@ -51,5 +52,6 @@ export {
   Error,
   Waitter,
   Header,
-  HeaderBottom
+  HeaderBottom,
+  Banner
 };

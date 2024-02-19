@@ -63,6 +63,10 @@ import hourglass from "./hourglass.gif"
 import nft_egg from "./nft_trung.png"
 import nft_egg_1 from "./egg.png"
 import no_image from "./no_image.png"
+import bannerImgOne from "./temp/slider/sliderImg_1.jpg"
+import bannerImgTwo from "./temp/slider/sliderImg_2.jpg"
+import bannerImgThree from "./temp/slider/sliderImg_3.jpg"
+import bannerImgFour from "./temp/slider/sliderImg_4.jpg"
 
 export default {
   hero2,
@@ -130,4 +134,8 @@ export default {
   nft_egg,
   nft_egg_1,
   no_image,
+  bannerImgOne,
+  bannerImgTwo,
+  bannerImgThree,
+  bannerImgFour
 };
