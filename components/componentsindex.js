@@ -25,6 +25,7 @@ import Waitter from "./Waitter/Waitter";
 import Header from "./Header/Header";
 import HeaderBottom from "./Header/HeaderBottom";
 import Banner from "./home/Banner";
+import Products from "./home/Products";
 
 export {
   Button,
@@ -53,5 +54,6 @@ export {
   Waitter,
   Header,
   HeaderBottom,
-  Banner
+  Banner,
+  Products
 };

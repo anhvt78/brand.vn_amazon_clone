@@ -63,10 +63,13 @@ import hourglass from "./hourglass.gif"
 import nft_egg from "./nft_trung.png"
 import nft_egg_1 from "./egg.png"
 import no_image from "./no_image.png"
-import bannerImgOne from "./temp/slider/sliderImg_1.jpg"
-import bannerImgTwo from "./temp/slider/sliderImg_2.jpg"
-import bannerImgThree from "./temp/slider/sliderImg_3.jpg"
-import bannerImgFour from "./temp/slider/sliderImg_4.jpg"
+import bannerImgOne from "./temp/slider/bannerImgOne.jpg"
+import bannerImgTwo from "./temp/slider/bannerImgTwo.jpg"
+import bannerImgThree from "./temp/slider/bannerImgThree.jpg"
+import bannerImgFour from "./temp/slider/bannerImgFour.jpg"
+import bannerImgFive from "./temp/slider/bannerImgFive.jpg"
+import vnFlag from "./temp/vn_flag.png"
+import amazonLogo from "./temp/logo.png"
 
 export default {
   hero2,
@@ -137,5 +140,8 @@ export default {
   bannerImgOne,
   bannerImgTwo,
   bannerImgThree,
-  bannerImgFour
+  bannerImgFour,
+  bannerImgFive,
+  vnFlag,
+  amazonLogo
 };

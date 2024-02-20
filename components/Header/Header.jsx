@@ -80,7 +80,7 @@ const Header = () => {
             {showAll && (
               <div>
                 <ul className="absolute w-56 h-80 top-10 left-0 overflow-y-scroll
-                overflow-x-hidden bg-white border-[1px] border-x-amazon_blue text-black pl-2
+                overflow-x-hidden bg-white border-[1px] border-amazon_blue text-black pl-2 flex
                 flex-col gap-1 z-50">
                   {
                     allItems.map((item) => (

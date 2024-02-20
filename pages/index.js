@@ -16,6 +16,8 @@ import {
   // AudioLive,
   // FollowerTab,
   Slider,
+  Banner,
+  // Products
   // Brand,
   // Video,
   // Loader,
@@ -39,7 +41,9 @@ const Home = () => {
 
   return (
     <div>
-      
+        <Banner />
+        {/* <Products /> */}
+       
     </div>
   );
 };
