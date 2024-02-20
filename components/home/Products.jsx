@@ -1,9 +1,16 @@
-import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import axios from 'axios';
 
 const Products = () => {
-    const data = useLoaderData()
-    const productData = data.data;
+    useEffect(() => {
+      async function ProductsData() {
+        let data = await axios.get("https://fakestoreapi.com/products");
+        console.log(data.data);
+      }
+
+      ProductsData()
+
+    })
   return (
     <div>Products</div>
   )

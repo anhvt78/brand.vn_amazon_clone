@@ -17,7 +17,7 @@ import {
   // FollowerTab,
   Slider,
   Banner,
-  // Products
+  Products
   // Brand,
   // Video,
   // Loader,
@@ -42,7 +42,7 @@ const Home = () => {
   return (
     <div>
         <Banner />
-        {/* <Products /> */}
+        <Products />
        
     </div>
   );
