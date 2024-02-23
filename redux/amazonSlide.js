@@ -5,15 +5,15 @@ const initialState = {
     userInfo: [],
 }
 
-export const amazonSlide = createSlice({
+export const amazonSlice = createSlice({
     name: "amazon",
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            state.products = action.payload
+            state.products.push(action.payload)
         }
     }
 })
 
-export const {addToCart} = amazonSlide.actions;
-export default amazonSlide.reducer;
+export const {addToCart} = amazonSlice.actions;
+export default amazonSlice.reducer;
