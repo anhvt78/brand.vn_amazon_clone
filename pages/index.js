@@ -28,21 +28,25 @@ import {Loader} from "../components/componentsindex";
 
 //IMPORT CONTRACT DATA
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+// import { getProducts } from "../Context/api/api";
 
 const Home = () => {
  
   const {getBidStep, checkIfWalletConnected, nftSales, nftAuctions, joinAuction, bidStep,  currentAccount, loading, setOpenError, setError} = useContext(NFTMarketplaceContext);
-  // const [nfts, setNfts] = useState([]);
-  // const [nftsCopy, setNftsCopy] = useState([]);
+  // const [data, setData] = useState([]);
+  // // const [nftsCopy, setNftsCopy] = useState([]);
   
-  // useEffect(()=> {
-  //   checkIfWalletConnected();
-  // }, []);
+  // useEffect(async ()=> {
+  //   const products = await getProducts();
+  //   setData(products.data)
+
+  //   // console.log("products = ", data);
+  // },[]);
 
   return (
     <div>
         <Banner />
-        <Products />
+        <Products/>
        
     </div>
   );
