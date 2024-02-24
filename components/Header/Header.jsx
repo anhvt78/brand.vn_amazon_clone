@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const products = useSelector((state) => state.amazoneReducer.products);
+  const products = useSelector((state) => state.amazonReducer.products);
   // console.log("aaaa = ",products);
   // const { data: session } = useSession();
 

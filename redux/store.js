@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import amazoneReducer from "../redux/amazonSlide";
+import amazonReducer from "../redux/amazonSlide";
 
 export const store = configureStore({
-    reducer: {amazoneReducer},
+    reducer: {amazonReducer},
 
 })
