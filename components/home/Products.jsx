@@ -6,7 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch } from 'react-redux';
-// import {store} from "../redux/store";
+import { addToCart } from '@/redux/amazonSlide';
 
 const Products = () => {
 
@@ -92,8 +92,7 @@ const Products = () => {
             </div>
             <button
               onClick={() =>
-                dispatch(
-                  addToCart({
+                dispatch(addToCart({
                     id: item.id,
                     title: item.title,
                     description: item.description,

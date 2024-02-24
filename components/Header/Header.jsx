@@ -14,8 +14,12 @@ import { ArrowDropDownOutlined, ShoppingCart } from "@mui/icons-material";
 // import SearchProducts from "../SearchProducts";
 import { allItems } from "@/constants";
 import { HeaderBottom } from "../componentsindex";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [showAll, setShowAll] = useState(false);
+
+  const products = useSelector((state) => state.amazoneReducer.products);
+  // console.log("aaaa = ",products);
   // const { data: session } = useSession();
 
 //   const { productData, favoriteData, userInfo, allProducts } = useSelector(
@@ -204,7 +208,7 @@ const Header = () => {
           />
           {/* <ShoppingCart/> */}
           <p className="text-xs text-whiteText font-semibold mt-4">Cart <span className="absolute bg-amazon_yellow text-amazon_blue rounded-full text-xs top-2 left-7 font-semibold p-1 h-4 flex justify-center items-center">
-            {/* {productData ? productData.length : 0} */}0
+            {products.length > 0 ? products.length : 0 }
           </span>
           </p>
         </Link>
