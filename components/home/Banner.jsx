@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
-import images from "../../img"
+import images from "../../img";
 import { Carousel } from "react-responsive-carousel";
 // const Banner = () => {
 //   return (
@@ -107,29 +107,29 @@ const Banner = () => {
       </div>
     ),
   };
-return (
- <div className='w-full'>
-   <div className='w-full h-full relative'>
-     <Slider {...settings}>
-       <div>
-         <Image src={images.bannerImgOne} alt="bannerImgOne" />
-       </div>
-       <div>
-         <Image src={images.bannerImgTwo} alt="bannerImgTwo" />
-       </div>
-       <div>
-         <Image src={images.bannerImgThree} alt="bannerImgThree" />
-       </div>
-       <div>
-         <Image src={images.bannerImgFour} alt="bannerImgFour" />
-       </div>
-       <div>
-         <Image src={images.bannerImgFive} alt="bannerImgFive" />
-       </div>
-     </Slider>
-   </div>
- </div>
-);
-}
+  return (
+    <div className="w-full">
+      <div className="w-full h-full relative">
+        <Slider {...settings}>
+          <div>
+            <Image src={images.bannerImgOne} alt="bannerImgOne" />
+          </div>
+          <div>
+            <Image src={images.bannerImgTwo} alt="bannerImgTwo" />
+          </div>
+          <div>
+            <Image src={images.bannerImgThree} alt="bannerImgThree" />
+          </div>
+          <div>
+            <Image src={images.bannerImgFour} alt="bannerImgFour" />
+          </div>
+          <div>
+            <Image src={images.bannerImgFive} alt="bannerImgFive" />
+          </div>
+        </Slider>
+      </div>
+    </div>
+  );
+};
 
-export default Banner
+export default Banner;

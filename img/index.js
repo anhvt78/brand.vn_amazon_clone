@@ -70,6 +70,7 @@ import bannerImgFour from "./temp/slider/bannerImgFour.jpg"
 import bannerImgFive from "./temp/slider/bannerImgFive.jpg"
 import vnFlag from "./temp/vn_flag.png"
 import amazonLogo from "./temp/logo.png"
+import emptyCart from "./temp/emptyCart.png"
 
 export default {
   hero2,
@@ -143,5 +144,6 @@ export default {
   bannerImgFour,
   bannerImgFive,
   vnFlag,
-  amazonLogo
+  amazonLogo,
+  emptyCart
 };
