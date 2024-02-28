@@ -9,23 +9,34 @@ import Link from "next/link";
 // import { StateProps, StoreProduct } from "../../../type";
 // import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { ArrowDropDownOutlined, ShoppingCart } from "@mui/icons-material";
+import {
+  ArrowDropDownOutlined,
+  Logout,
+  ShoppingCart,
+} from "@mui/icons-material";
 // import { addUser } from "@/store/nextSlice";
 // import SearchProducts from "../SearchProducts";
 import { allItems } from "@/constants";
 import { HeaderBottom } from "../componentsindex";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import { databaseRef } from "../../database/firebaseConfig";
+import { userSignOut } from "@/redux/amazonSlide";
+
 const Header = () => {
+  const auth = getAuth(databaseRef);
+  const dispatch = useDispatch();
   const [showAll, setShowAll] = useState(false);
 
   const products = useSelector((state) => state.amazonReducer.products);
-  // console.log("aaaa = ",products);
+  const userInfo = useSelector((state) => state.amazonReducer.userInfo);
+  // console.log("aaaa = ", userInfo);
   // const { data: session } = useSession();
 
-//   const { productData, favoriteData, userInfo, allProducts } = useSelector(
-//     (state: StateProps) => state.next
-//   );
-//   const dispatch = useDispatch();
+  //   const { productData, favoriteData, userInfo, allProducts } = useSelector(
+  //     (state: StateProps) => state.next
+  //   );
+  //   const dispatch = useDispatch();
   // useEffect(() => {
   //   setAllData(allProducts.allProducts);
   // }, [allProducts]);
@@ -45,25 +56,32 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-//   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     setSearchQuery(e.target.value);
-//   };
+  //   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     setSearchQuery(e.target.value);
+  //   };
 
-//   useEffect(() => {
-//     const filtered = allData.filter((item: StoreProduct) =>
-//       item.title.toLocaleLowerCase().includes(searchQuery.toLowerCase())
-//     );
-//     setFilteredProducts(filtered);
-//   }, [searchQuery]);
+  //   useEffect(() => {
+  //     const filtered = allData.filter((item: StoreProduct) =>
+  //       item.title.toLocaleLowerCase().includes(searchQuery.toLowerCase())
+  //     );
+  //     setFilteredProducts(filtered);
+  //   }, [searchQuery]);
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        dispatch(userSignOut());
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
   return (
     <div className="w-full ">
       <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center gap-4">
         {/* logo */}
-        <Link
-          href={"/"}
-          className="headerHover"
-        >
+        <Link href={"/"} className="headerHover">
           <Image className="w-28 object-cover mt-1" src={logo} alt="logoImg" />
         </Link>
         {/* delivery */}
@@ -77,26 +95,32 @@ const Header = () => {
         {/* serchbar */}
         {/* <div className="flex-1 h-10 hidden md:inline-flex items-center justify-between relative"> */}
         <div className="h-10 rounded-md flex flex-grow relative">
-          <span onClick={() => setShowAll(!showAll)} className="w-14 h-full bg-gray-200 hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center absolute left-0 rounded-tl-md rounded-bl-md">
+          <span
+            onClick={() => setShowAll(!showAll)}
+            className="w-14 h-full bg-gray-200 hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center absolute left-0 rounded-tl-md rounded-bl-md"
+          >
             All <span></span>
-            <ArrowDropDownOutlined/>
-            </span>
-            {showAll && (
-              <div>
-                <ul className="absolute w-56 h-80 top-10 left-0 overflow-y-scroll
+            <ArrowDropDownOutlined />
+          </span>
+          {showAll && (
+            <div>
+              <ul
+                className="absolute w-56 h-80 top-10 left-0 overflow-y-scroll
                 overflow-x-hidden bg-white border-[1px] border-amazon_blue text-black pl-2 flex
-                flex-col gap-1 z-50">
-                  {
-                    allItems.map((item) => (
-                      <li key={item._id} className="text-sm tracking-wide font-titleFont border-b-[1px]
-                        border-b-transparent hover:bg-blue-500 cursor-pointer duration-200">
-                        {item.title}
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            )}
+                flex-col gap-1 z-50"
+              >
+                {allItems.map((item) => (
+                  <li
+                    key={item._id}
+                    className="text-sm tracking-wide font-titleFont border-b-[1px]
+                        border-b-transparent hover:bg-blue-500 cursor-pointer duration-200"
+                  >
+                    {item.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <input
             // onChange={handleSearch}
             // value={searchQuery}
@@ -150,11 +174,19 @@ const Header = () => {
           {/* ========== Searchfield ========== */}
         </div>
         <div className="flex flex-col items-start justify-center headerHover">
-          <p className="text-xs text-lightText font-light">Hello, sign in</p>
-          <p className="text-sm font-semibold -mt-1 text-whiteText">Accounts & Lists{" "} 
-          <span>
-            <ArrowDropDownOutlined/>
-          </span>
+          {userInfo ? (
+            <p className="text-sm text-gray-100 font-medium">
+              {userInfo.userName}
+            </p>
+          ) : (
+            <p className="text-xs text-lightText font-light">Hello, sign in</p>
+          )}
+
+          <p className="text-sm font-semibold -mt-1 text-whiteText">
+            Accounts & Lists{" "}
+            <span>
+              <ArrowDropDownOutlined />
+            </span>
           </p>
         </div>
         {/* signin */}
@@ -200,20 +232,34 @@ const Header = () => {
         {/* cart */}
         <Link
           href={"/cart"}
-          className="flex items-start justify-center headerHover relative">
+          className="flex items-start justify-center headerHover relative"
+        >
           <Image
             className="w-auto object-cover h-8 mt-3"
             src={cartIcon}
             alt="cartImg"
           />
           {/* <ShoppingCart/> */}
-          <p className="text-xs text-whiteText font-semibold mt-4">Cart <span className="absolute bg-amazon_yellow text-amazon_blue rounded-full text-xs top-2 left-7 font-semibold p-1 h-4 flex justify-center items-center">
-            {products.length > 0 ? products.length : 0 }
-          </span>
+          <p className="text-xs text-whiteText font-semibold mt-4">
+            Cart{" "}
+            <span className="absolute bg-amazon_yellow text-amazon_blue rounded-full text-xs top-2 left-7 font-semibold p-1 h-4 flex justify-center items-center">
+              {products.length > 0 ? products.length : 0}
+            </span>
           </p>
         </Link>
+        {userInfo && (
+          <div
+            onClick={handleLogout}
+            className="flex flex-col justify-center items-center headerHover relative"
+          >
+            <Logout />
+            <p className="hidden mdl:inline-flex text-xs font-semibold text-whiteText">
+              Log out
+            </p>
+          </div>
+        )}
       </div>
-      <HeaderBottom/>
+      <HeaderBottom />
     </div>
   );
 };

@@ -12,15 +12,15 @@
 //   databaseURL: `${process.env.firebase_databaseURL}`
 // };
 
-// // Initialize Firebase  
+// // Initialize Firebase
 // const databaseRef = initializeApp(firebaseConfig);
 
 // export default {databaseRef, firebaseConfig};
 
 // utils/firebase.js
 
-import {initializeApp} from 'firebase/app';
-import {getDatabase} from 'firebase/database';
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: `${process.env.firebase_apiKey}`,
@@ -30,15 +30,15 @@ const firebaseConfig = {
   messagingSenderId: `${process.env.firebase_messagingSenderId}`,
   appId: `${process.env.firebase_appId}`,
   measurementId: `${process.env.firebase_measurementId}`,
-  databaseURL: `${process.env.firebase_databaseURL}`
+  databaseURL: `${process.env.firebase_databaseURL}`,
 };
 
 // Khởi tạo Firebase
 // if (!firebase.apps.length) {
-  
+
 // }
 
-const databaseRef = initializeApp(firebaseConfig);
+export const databaseRef = initializeApp(firebaseConfig);
 
 const firebase = getDatabase(databaseRef);
 // firebase.initializeApp(firebaseConfig);
