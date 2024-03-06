@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "slick-carousel/slick/slick.css";
+import "../ProductAddNew/productAddNew.css";
 
 //INTRNAL IMPORT
 import { Header, Footer } from "../components/componentsindex";

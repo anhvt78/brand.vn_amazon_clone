@@ -4,7 +4,7 @@ import {
   incrementQty,
   resetCart,
 } from "@/redux/amazonSlide";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import images from "../img";
 import Link from "next/link";
@@ -14,6 +14,17 @@ import { motion } from "framer-motion";
 const cart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.amazonReducer.products);
+  const [totalValue, setTotalValue] = useState(0);
+
+  useEffect(() => {
+    let amount = 0;
+    products.map((item) => {
+      amount += item.price * item.quantity;
+    });
+    amount = Math.round(amount * 100) / 100;
+    setTotalValue(amount);
+  }, products);
+
   return (
     <div class="w-full bg-gray-100 p-4">
       {products.length > 0 ? (
@@ -68,7 +79,7 @@ const cart = () => {
                     </div>
                     <div class="w-full md:w-24">
                       <p class="text-lg xl:w-24 font-titleFont font-semibold">
-                        ${item.price * item.quantity}
+                        ${Math.round(item.price * item.quantity * 100) / 100}
                       </p>
                     </div>
                   </div>
@@ -103,7 +114,7 @@ const cart = () => {
               </p>
               <div>
                 <p class="font-semibold px-6 py-1 flex items-center justify-between">
-                  Total: <span class="text-lg font-bold">$94.28</span>
+                  Total: <span class="text-lg font-bold">${totalValue}</span>
                 </p>
               </div>
               <button class="w-full font-titleFont font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow-400 border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-400 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3">

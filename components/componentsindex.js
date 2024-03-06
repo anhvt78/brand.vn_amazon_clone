@@ -26,6 +26,7 @@ import Header from "./Header/Header";
 import HeaderBottom from "./Header/HeaderBottom";
 import Banner from "./home/Banner";
 import Products from "./home/Products";
+import FormattedPrice from "./Utils/formatPrice";
 
 export {
   Button,
@@ -55,5 +56,6 @@ export {
   Header,
   HeaderBottom,
   Banner,
-  Products
+  Products,
+  FormattedPrice,
 };
