@@ -27,6 +27,7 @@ import HeaderBottom from "./Header/HeaderBottom";
 import Banner from "./home/Banner";
 import Products from "./home/Products";
 import FormattedPrice from "./Utils/formatPrice";
+import NewItemWithIcon from "./NewItemWithIcon/NewItemWithIcon";
 
 export {
   Button,
@@ -58,4 +59,5 @@ export {
   Banner,
   Products,
   FormattedPrice,
+  NewItemWithIcon,
 };

@@ -1,0 +1,111 @@
+.stepper {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: spaceBetween;
+  position: relative;
+}
+
+.stepper--1 .stepperLineBackground,
+.stepper--1 .stepperLineForeground {
+  margin: 0;
+  width: 100%;
+}
+
+.stepper--1 .stepperStep {
+  flex: 1;
+}
+
+.stepperStep {
+  cursor: default;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: 140px;
+  z-index: 1;
+}
+
+.stepperStepIcon {
+  align-items: center;
+  background-color: #fff;
+  border: 4px solid #e0e0e0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.875rem;
+  height: 60px;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  transition: #2dc258 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s,
+    #2dc258 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s,
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s;
+  width: 60px;
+}
+
+.stepperStepIicon--pending {
+  background-color: #2dc258;
+  color: #fff;
+  /* strike: #fff; */
+  fill: #2dc258;
+  border-color: #2dc258;
+}
+
+.stepperStepIiconFinish {
+  border-color: #2dc258;
+  color: #2dc258;
+}
+
+.stepperStep-text {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 1.25rem 0 0.25rem;
+  text-transform: capitalize;
+}
+
+.stepperStep-date {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 0.75rem;
+  height: 0.875rem;
+}
+
+.stepperStep-error-icon {
+  background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/orderlist/1ad2ad6abe3eb96eacc4.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1.875rem;
+  position: absolute;
+  right: -0.9375rem;
+  top: -0.625rem;
+  width: 1.875rem;
+}
+
+.stepperLine {
+  height: 4px;
+  position: absolute;
+  top: 29px;
+  width: 100%;
+}
+
+.stepperLineBackground,
+.stepperLineForeground {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0 70px;
+  position: absolute;
+  width: calc(100% - 140px);
+}
+
+.stepperLineBackground {
+  background: #e0e0e0;
+}
+
+.stepperLineForeground {
+  background: #2dc258;
+  transition: 60px 1s cubic-bezier(0.4, 0, 0.2, 1);
+}

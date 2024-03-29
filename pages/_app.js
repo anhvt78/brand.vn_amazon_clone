@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "slick-carousel/slick/slick.css";
 // import "../AddNewProductPage/AddNewProduct.css";
-import "../styles/addNewBrand.css";
+// import "../styles/addNewBrand.css";
 
 //INTRNAL IMPORT
 import { Header, Footer } from "../components/componentsindex";

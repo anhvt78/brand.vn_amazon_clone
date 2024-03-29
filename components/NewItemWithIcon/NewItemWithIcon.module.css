@@ -1,0 +1,687 @@
+.shopeeImageManager {
+  display: inline-block;
+  width: auto !important;
+  position: relative;
+  color: #1791f2;
+}
+
+.shopeeImageManager .icon_others,
+.shopeeImageManager .icon_zoom {
+  width: 16px;
+  height: 16px;
+}
+
+.shopeeImageManager .container,
+.shopeeImageManager .shopeeImageManager__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.shopeeImageManager .shopeeImageManager__main {
+  z-index: 2;
+}
+
+.shopeeImageManager .shopeeImageManager__main__shadow {
+  position: static;
+}
+
+.shopeeImageManager .shopeeImageManagerItembox {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 80px;
+  flex: 0 0 80px;
+  width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  margin: 0 16px 16px 0;
+  border-radius: 4px;
+}
+
+.shopeeImageManager .shopeeImageManagerContent {
+  position: relative;
+  height: 100%;
+  padding-top: 100%;
+  border-radius: 2px;
+}
+
+@-webkit-keyframes loading-360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes loading-360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+.shopeeImageManager .shopeeImageManagerContent .image_loading .shopeeIcon {
+  -webkit-animation: loading-360 0.8s infinite linear;
+  animation: loading-360 0.8s infinite linear;
+}
+
+.shopeeImageManager .shopeeImageManagerContent:hover {
+  background: rgba(238, 77, 45, 0.03);
+}
+
+.shopeeImageManager .shopeeImageManagerContent .shopeeImageManagerImage {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.shopeeImageManager .shopeeImageManagerContent .mandatory_icon {
+  color: #ee4d2d;
+  margin-right: 3px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.shopeeImageManager:not(.image_lock) .shopeeImageManagerContent {
+  cursor: move;
+}
+
+.shopeeImageManager .shopeeImageManagerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background: transparent 50% no-repeat;
+  background-size: contain;
+}
+
+.shopeeImageManager .shopeeImageManagerTools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 4px 4px;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  font-weight: 700;
+}
+
+.shopeeImageManager .shopeeImageManagerIcon {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.shopeeImageManager .shopeeImageManagerIcon .shopeeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.shopeeImageManager .shopeeImageManager__text {
+  color: #fff;
+  font-size: 12px;
+}
+
+.shopeeImageManager .decollator {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: hsla(0, 0%, 100%, 0.5);
+  border-radius: 0.5px;
+}
+
+.shopeeImageManager .shopeeImageManagerUpload {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  border: 1px dashed #d8d8d8;
+  border-radius: 4px;
+  -webkit-transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.shopeeImageManager .shopeeImageManagerUpload:hover {
+  border: 1px dashed #ee4d2d;
+}
+
+.shopeeImageManager .shopeeImageManagerUploadContent {
+  color: #ee4d2d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 0 2px;
+}
+
+.shopeeImageManager .shopeeImageManagerUploadContentIcon {
+  height: 23px;
+}
+
+.shopeeImageManager .shopeeImageManagerUploadContentText {
+  line-height: 14px;
+  font-size: 12px;
+}
+
+.shopeeImageManager .error-container,
+.shopeeImageManager .flex-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.shopeeImageManager .error-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: #fff;
+  letter-spacing: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.shopeeImageManager .error-container .shopeeIcon {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+.shopeeImageManager .error-container .fail-text {
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  word-break: break-word;
+}
+
+.shopeeImageManager .shopeeUpload .shopeeIcon {
+  width: 23px;
+  height: 23px;
+}
+
+.shopeeImageManager .shopeeUpload .shopeeUpload-wrapper {
+  padding: 0;
+  border: 0;
+  background: #fff;
+}
+
+.shopeeImageManager .shopeeUpload .shopeeUpload-wrapper:hover {
+  background: rgba(238, 77, 45, 0.03);
+}
+
+.shopeeImageManager .shopeeUpload .subtitle {
+  font-size: 12px;
+}
+
+.field-error-message {
+  font-size: 12px;
+  list-style: 14px;
+  color: #ff4742;
+}
+
+.image-error-message {
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+/*!
+ * Cropper.js v1.5.13
+ * https://fengyuanchen.github.io/cropperjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2022-11-20T05:30:43.444Z
+ */
+.cropper-container {
+  direction: ltr;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cropper-container img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  height: 100%;
+  image-orientation: 0deg;
+  max-height: none !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  width: 100%;
+}
+
+.cropper-canvas,
+.cropper-crop-box,
+.cropper-drag-box,
+.cropper-modal,
+.cropper-wrap-box {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.cropper-canvas,
+.cropper-wrap-box {
+  overflow: hidden;
+}
+
+.cropper-drag-box {
+  background-color: #fff;
+  opacity: 0;
+}
+
+.cropper-modal {
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.cropper-view-box {
+  display: block;
+  height: 100%;
+  outline: 1px solid #39f;
+  outline-color: rgba(51, 153, 255, 0.75);
+  overflow: hidden;
+  width: 100%;
+}
+
+.cropper-dashed {
+  border: 0 dashed #eee;
+  display: block;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.cropper-dashed.dashed-h {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  height: 33.33333%;
+  left: 0;
+  top: 33.33333%;
+  width: 100%;
+}
+
+.cropper-dashed.dashed-v {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  height: 100%;
+  left: 33.33333%;
+  top: 0;
+  width: 33.33333%;
+}
+
+.cropper-center {
+  display: block;
+  height: 0;
+  left: 50%;
+  opacity: 0.75;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.cropper-center:after,
+.cropper-center:before {
+  background-color: #eee;
+  content: " ";
+  display: block;
+  position: absolute;
+}
+
+.cropper-center:before {
+  height: 1px;
+  left: -3px;
+  top: 0;
+  width: 7px;
+}
+
+.cropper-center:after {
+  height: 7px;
+  left: 0;
+  top: -3px;
+  width: 1px;
+}
+
+.cropper-face,
+.cropper-line,
+.cropper-point {
+  display: block;
+  height: 100%;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+}
+
+.cropper-face {
+  background-color: #fff;
+  left: 0;
+  top: 0;
+}
+
+.cropper-line {
+  background-color: #39f;
+}
+
+.cropper-line.line-e {
+  cursor: ew-resize;
+  right: -3px;
+  top: 0;
+  width: 5px;
+}
+
+.cropper-line.line-n {
+  cursor: ns-resize;
+  height: 5px;
+  left: 0;
+  top: -3px;
+}
+
+.cropper-line.line-w {
+  cursor: ew-resize;
+  left: -3px;
+  top: 0;
+  width: 5px;
+}
+
+.cropper-line.line-s {
+  bottom: -3px;
+  cursor: ns-resize;
+  height: 5px;
+  left: 0;
+}
+
+.cropper-point {
+  background-color: #39f;
+  height: 5px;
+  opacity: 0.75;
+  width: 5px;
+}
+
+.cropper-point.point-e {
+  cursor: ew-resize;
+  margin-top: -3px;
+  right: -3px;
+  top: 50%;
+}
+
+.cropper-point.point-n {
+  cursor: ns-resize;
+  left: 50%;
+  margin-left: -3px;
+  top: -3px;
+}
+
+.cropper-point.point-w {
+  cursor: ew-resize;
+  left: -3px;
+  margin-top: -3px;
+  top: 50%;
+}
+
+.cropper-point.point-s {
+  bottom: -3px;
+  cursor: s-resize;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.cropper-point.point-ne {
+  cursor: nesw-resize;
+  right: -3px;
+  top: -3px;
+}
+
+.cropper-point.point-nw {
+  cursor: nwse-resize;
+  left: -3px;
+  top: -3px;
+}
+
+.cropper-point.point-sw {
+  bottom: -3px;
+  cursor: nesw-resize;
+  left: -3px;
+}
+
+.cropper-point.point-se {
+  bottom: -3px;
+  cursor: nwse-resize;
+  height: 20px;
+  opacity: 1;
+  right: -3px;
+  width: 20px;
+}
+
+@media (min-width: 768px) {
+  .cropper-point.point-se {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cropper-point.point-se {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cropper-point.point-se {
+    height: 5px;
+    opacity: 0.75;
+    width: 5px;
+  }
+}
+
+.cropper-point.point-se:before {
+  background-color: #39f;
+  bottom: -50%;
+  content: " ";
+  display: block;
+  height: 200%;
+  opacity: 0;
+  position: absolute;
+  right: -50%;
+  width: 200%;
+}
+
+.cropper-invisible {
+  opacity: 0;
+}
+
+.cropper-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+
+.cropper-hide {
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.cropper-hidden {
+  display: none !important;
+}
+
+.cropper-move {
+  cursor: move;
+}
+
+.cropper-crop {
+  cursor: crosshair;
+}
+
+.cropper-disabled .cropper-drag-box,
+.cropper-disabled .cropper-face,
+.cropper-disabled .cropper-line,
+.cropper-disabled .cropper-point {
+  cursor: not-allowed;
+}
+
+.shopee-upload {
+  height: 100%;
+}
+
+.shopee-upload .shopeeIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.shopee-upload .shopee-upload-dragger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fafafa;
+}
+
+.shopeeFileUpload {
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+}
+
+.shopeeFileUploadIcon {
+  height: 56px;
+}
+
+.shopeeFileUploadIcon .shopeeIcon {
+  width: 56px;
+  height: 56px;
+  fill: #bababa;
+  -webkit-transition: fill 0.25s ease;
+  transition: fill 0.25s ease;
+}
+
+.shopeeFileUploadIcon__simple {
+  height: 40px;
+}
+
+.shopeeFileUploadIcon__simple .shopeeIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.shopeeFileUpload__action {
+  display: block;
+  height: 40px;
+}
+
+.shopeeFileUpload__drop_prompt {
+  width: 100%;
+}
+
+.shopeeFileUpload__drop_prompt ul {
+  text-align: left;
+  margin-top: 16px;
+  display: inline-block;
+  color: #bababa;
+}
+
+.shopeeFileUpload__drop_prompt .subtitle {
+  height: 40px;
+  line-height: 40px;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.shopeeFileUpload__instruction {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  color: #404040;
+  margin-left: 12px;
+  line-height: 40px;
+  height: 40px;
+  vertical-align: top;
+}
+
+.shopeeFileUpload:hover .drop_prompt .icon svg {
+  fill: #666;
+}
+
+.shopeeFileUpload:hover .drop_prompt .subtitle {
+  color: #666;
+}

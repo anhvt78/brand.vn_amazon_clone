@@ -4,14 +4,14 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      maxHeight:{
-        container:"1440px"
+      maxHeight: {
+        container: "1440px",
       },
       screens: {
         xs: "320px",
@@ -34,12 +34,30 @@ module.exports = {
       },
       fontFamily: {
         titleFont: "Roboto",
-        bodyFont: ["Poppins", "sans-serif"],
+
+        bodyFont: [
+          "Poppins",
+          "sans-serif",
+          "Roboto",
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
+          "文泉驛正黑",
+          "WenQuanYi Zen Hei",
+          "Hiragino Sans GB",
+          "儷黑 Pro",
+          "LiHei Pro",
+          "Heiti TC",
+          "微軟正黑體",
+          "Microsoft JhengHei UI",
+          "Microsoft JhengHei",
+          "sans-serif",
+        ],
       },
       boxShadow: {
         testShadow: "0px 0px 32px 1px rgba(199,199,199,1)",
         amazonInput: "0 0 3px 2px rgb(228 121 17 / 50%)",
-      }
+      },
     },
   },
   plugins: [],
