@@ -7,8 +7,48 @@ import { useState } from "react";
 // import { ColorModeContext, useMode } from "@/theme";
 import { CssBaseline } from "@mui/material";
 
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 const seller = () => {
   // console.log("theme", theme);
+
+  const Items = [{title: "Sản phẩm", items: 
+                                  [{title: "Thêm sản phẩm mới", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  {title: "Danh sách sản phẩm", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  // {title: "Manage Team", to: "/team", icon: <PeopleOutlinedIcon />}
+                                  ]
+                                
+                  },
+                  {title: "Quản lý đơn hàng", items: 
+                                  [{title: "Danh sách đơn hàng", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  {title: "Tình trạng đơn hàng", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  // {title: "Manage Team", to: "/team", icon: <PeopleOutlinedIcon />}
+                                  ]
+                                
+                  },
+                  {title: "Đơn hàng ngoại lệ",  items: 
+                                  [{title: "Danh sách đơn hàng ngoại lệ", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  {title: "Tình trạng xử lý đơn ngoại lệ", to: "/team", icon: <PeopleOutlinedIcon />},
+                                  {title: "Manage Team", to: "/team", icon: <PeopleOutlinedIcon />}
+                                  ]
+                                
+                  },
+                  {title: "Quản lý bán hàng",  items: 
+                        [{title: "Tình trạng kinh doanh", to: "/team", icon: <PeopleOutlinedIcon />},
+                        {title: "Danh sách nhãn hàng", to: "/team", icon: <PeopleOutlinedIcon />},
+                        {title: "Đăng ký đại lý", to: "/team", icon: <PeopleOutlinedIcon />},
+                        {title: "Kiểm soát chất lượng dịch vụ", to: "/team", icon: <PeopleOutlinedIcon />},
+                        ]
+                
+                  },
+                ]
 
   const [isSidebar, setIsSidebar] = useState(true);
 
@@ -16,9 +56,8 @@ const seller = () => {
     // <ColorModeContext.Provider value={colorMode}>
     //   <ThemeProvider theme={theme}>
     <div>
-      <div>
         {/* <LeftBar isSidebar={isSidebar} /> */}
-        <LeftBar />
+
         <main className="content">
           <Topbar setIsSidebar={setIsSidebar} />
           {/* <Routes>
@@ -35,8 +74,8 @@ const seller = () => {
               <Route path="/geography" element={<Geography />} />
             </Routes> */}
         </main>
+        <LeftBar title = "Người bán" items ={Items} width =  "30%"/>
       </div>
-    </div>
     //   </ThemeProvider>
     // </ColorModeContext.Provider>
   );
