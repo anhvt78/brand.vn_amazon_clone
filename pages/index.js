@@ -29,6 +29,9 @@ import { Loader } from "../components/componentsindex";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 // import { getProducts } from "../Context/api/api";
 
+import { ColorModeContext, useMode } from "@/theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
 const Home = () => {
   const {
     getBidStep,
@@ -52,11 +55,22 @@ const Home = () => {
   //   // console.log("products = ", data);
   // },[]);
 
+  const [theme, colorMode] = useMode();
+
   return (
-    <div>
-      <Banner />
-      <Products />
-    </div>
+    // <div>
+    //   {/* <Banner /> */}
+    //   <Products />
+    // </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        {/* <CssBaseline /> */}
+        <div>
+          {/* <Banner /> */}
+          <Products />
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 
