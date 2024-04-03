@@ -46,9 +46,10 @@ const _subMenu = ({title, items}) => {
         {
                   
           items.map((item) => { 
-                      console.log(item.to);
+                      // console.log(item.to);
                       return (
                       <_menuItem
+                      key={item.title}
                       title={item.title}
                       to={item.to}
                       icon={item.icon}
@@ -126,7 +127,7 @@ const LeftBar = ({title, items}) => {
             {
               items.map((el) => {
                 return (
-                  <_subMenu title={el.title} items={el.items}/>
+                  <_subMenu key={el.title} title={el.title} items={el.items}/>
                 )
               })             
             }           

@@ -16,6 +16,13 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import Team from "@/scenes/team";
+import FAQ from "@/scenes/faq";
+import Invoices from "@/scenes/invoices";
+import Contacts from "@/scenes/contacts";
+import Form from "@/scenes/form";
+import Calendar from "@/scenes/calendar";
+// import Line from "@/scenes/line";
 const seller = () => {
   // console.log("theme", theme);
 
@@ -56,10 +63,19 @@ const seller = () => {
     // <ColorModeContext.Provider value={colorMode}>
     //   <ThemeProvider theme={theme}>
     <div>
+      <Topbar setIsSidebar={setIsSidebar} />
+    <div className="w-full flex flex-row">
         {/* <LeftBar isSidebar={isSidebar} /> */}
-
+        <LeftBar title = "Người bán" items ={Items}/>
         <main className="content">
-          <Topbar setIsSidebar={setIsSidebar} />
+          
+          <Team />
+          <FAQ />
+          <Invoices />
+          <Contacts />
+          <Form />
+          <Calendar />
+          {/* <Line /> */}
           {/* <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
@@ -74,8 +90,10 @@ const seller = () => {
               <Route path="/geography" element={<Geography />} />
             </Routes> */}
         </main>
-        <LeftBar title = "Người bán" items ={Items} width =  "30%"/>
+        
       </div>
+    </div>
+
     //   </ThemeProvider>
     // </ColorModeContext.Provider>
   );
