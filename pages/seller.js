@@ -22,6 +22,7 @@ import Invoices from "@/scenes/invoices";
 import Contacts from "@/scenes/contacts";
 import Form from "@/scenes/form";
 import Calendar from "@/scenes/calendar";
+import Bar from "@/scenes/bar";
 // import Line from "@/scenes/line";
 const seller = () => {
   // console.log("theme", theme);
@@ -75,6 +76,7 @@ const seller = () => {
           <Contacts />
           <Form />
           <Calendar />
+          <Bar/>
           {/* <Line /> */}
           {/* <Routes>
               <Route path="/" element={<Dashboard />} />
