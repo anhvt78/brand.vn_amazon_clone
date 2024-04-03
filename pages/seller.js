@@ -23,7 +23,12 @@ import Contacts from "@/scenes/contacts";
 import Form from "@/scenes/form";
 import Calendar from "@/scenes/calendar";
 import Bar from "@/scenes/bar";
-// import Line from "@/scenes/line";
+import Line from "@/scenes/Line";
+// import PieChart from "@/scenes/PieChart";
+import GeographyChart from "@/components/GeographyChart";
+import ProgressCircle from "@/components/ProgressCircle";
+import StatBox from "@/components/StatBox";
+import Dashboard from "@/scenes/dashboard";
 const seller = () => {
   // console.log("theme", theme);
 
@@ -77,7 +82,11 @@ const seller = () => {
           <Form />
           <Calendar />
           <Bar/>
-          {/* <Line /> */}
+          <Line />
+          <Dashboard />
+          <GeographyChart/>
+          <ProgressCircle />
+          <StatBox/>
           {/* <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
